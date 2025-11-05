@@ -7,17 +7,20 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
 
+    const float ACCELERATION_FACTOR = 5.0f;
+    const float DECELERATION_FACTOR = 10.0f;
+    const float SPEED_THRESHOLD = 100.0f;
+    const float JUMP_FORCE = 100.0f;
+    const float UTILITY_FORCE = 2000.0f;
+    const float UTILITY_COOLDOWN = 1.5f;
+    const float DOWNWARD_FORCE = -2.0f;
+
     InputAction moveAction;
     InputAction jumpAction;
     InputAction utilityAction;
     GameObject player;
     Rigidbody playerRigidBody;
 
-    const float SPEED = 4.5f;
-    const float JUMP_FORCE = 100.0f;
-    const float UTILITY_FORCE = 2000.0f;
-    const float UTILITY_COOLDOWN = 1.5f;
-    const float DOWNWARD_FORCE = -2.0f;
     float xSpeed = 0.0f;
     float ySpeed = 0.0f;
 
@@ -37,12 +40,18 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        Vector2 moveValue = moveAction.ReadValue<Vector2>();
-
-        xSpeed = moveValue.x * SPEED;
-        ySpeed = moveValue.y * SPEED;
-
         // player movement handling and increased gravity (downward force applied)
+        Vector2 moveValue = moveAction.ReadValue<Vector2>();
+        if (moveValue.magnitude > 0)
+        {
+            xSpeed = moveValue.x * ACCELERATION_FACTOR;
+            ySpeed = moveValue.y * ACCELERATION_FACTOR;
+        }
+        else
+        {
+            xSpeed = 0.0f;
+            ySpeed = 0.0f; // come back to this to fix deceleration plz
+        }
         playerRigidBody.AddForce(xSpeed, DOWNWARD_FORCE, ySpeed);
 
         // pressed actions

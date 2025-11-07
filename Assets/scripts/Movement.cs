@@ -7,13 +7,13 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
 
-    const float ACCELERATION_FACTOR = 75.0f;
-    const float DECELERATION_FACTOR = 50.0f;
-    const float SPEED_THRESHOLD = 750.0f;
-    const float JUMP_FORCE = 2000.0f;
-    const float UTILITY_FORCE = 3500.0f;
-    const float UTILITY_COOLDOWN = 1.5f;
-    const float DOWNWARD_FORCE = -50.0f;
+    public float ACCELERATION_FACTOR = 75.0f;
+    public float DECELERATION_FACTOR = 50.0f;
+    public float SPEED_THRESHOLD = 750.0f;
+    public float JUMP_FORCE = 2000.0f;
+    public float UTILITY_FORCE = 3500.0f;
+    public float UTILITY_COOLDOWN = 1.5f;
+    public float DOWNWARD_FORCE = -50.0f;
 
     InputAction moveAction;
     InputAction jumpAction;
@@ -21,8 +21,8 @@ public class Movement : MonoBehaviour
     GameObject player;
     Rigidbody playerRigidBody;
 
-    float xSpeed = 0.0f;
-    float ySpeed = 0.0f;
+    public float xSpeed = 0.0f;
+    public float ySpeed = 0.0f;
 
     bool utilityDebounce = false;
 

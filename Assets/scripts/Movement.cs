@@ -7,13 +7,14 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
 
-    const float ACCELERATION_FACTOR = 5.0f;
-    const float DECELERATION_FACTOR = 10.0f;
-    const float SPEED_THRESHOLD = 100.0f;
+    const int FRAME_SPEED_CAP = 60;
+    const float ACCELERATION_FACTOR = 600.0f;
+    const float DECELERATION_FACTOR = 450.0f;
+    const float SPEED_THRESHOLD = 2000.0f;
     const float JUMP_FORCE = 100.0f;
-    const float UTILITY_FORCE = 2000.0f;
+    const float UTILITY_FORCE = 3500.0f;
     const float UTILITY_COOLDOWN = 1.5f;
-    const float DOWNWARD_FORCE = -2.0f;
+    const float DOWNWARD_FORCE = -1750.0f;
 
     InputAction moveAction;
     InputAction jumpAction;
@@ -40,29 +41,38 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        // player movement handling and increased gravity (downward force applied)
+        float frameRateFactor = Time.deltaTime;
+
+        // player movement handling
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
         if (moveValue.magnitude > 0)
         {
-            xSpeed = moveValue.x * ACCELERATION_FACTOR;
-            ySpeed = moveValue.y * ACCELERATION_FACTOR;
+            xSpeed = (moveValue.x * ACCELERATION_FACTOR) * frameRateFactor;
+            ySpeed = (moveValue.y * ACCELERATION_FACTOR) * frameRateFactor;
         }
         else
         {
             xSpeed = 0.0f;
             ySpeed = 0.0f; // come back to this to fix deceleration plz
         }
-        playerRigidBody.AddForce(xSpeed, DOWNWARD_FORCE, ySpeed);
+        playerRigidBody.AddForce(xSpeed, 0, ySpeed);
 
-        // pressed actions
-        if (jumpAction.IsPressed() && IsGrounded())
+        // pressed actions & gravity application
+        if (IsGrounded())
         {
-            playerRigidBody.AddForce(0, JUMP_FORCE, 0);
+            if (jumpAction.IsPressed())
+            {
+                playerRigidBody.AddForce(0, JUMP_FORCE, 0);
+            }
+        }
+        else
+        {
+            playerRigidBody.AddForce(0, DOWNWARD_FORCE * frameRateFactor, 0);
         }
         if (utilityAction.IsPressed() && !utilityDebounce)
         {
             UnityEngine.Debug.Log("activated");
-            StartCoroutine(activateUtility(moveValue));
+            StartCoroutine(activateUtility(moveValue, frameRateFactor));
             UnityEngine.Debug.Log("off cooldown");
         }
 
@@ -76,7 +86,7 @@ public class Movement : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f);
 
     }
-    IEnumerator activateUtility(Vector2 v2MoveValue)
+    IEnumerator activateUtility(Vector2 v2MoveValue, float frameFactor)
     {
 
         utilityDebounce = true;

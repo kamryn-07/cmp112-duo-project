@@ -3,6 +3,7 @@ using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Movement : MonoBehaviour
     public float ACCELERATION_FACTOR = 75.0f;
     public float DECELERATION_FACTOR = 50.0f;
     public float SPEED_THRESHOLD = 750.0f;
-    public float JUMP_FORCE = 2000.0f;
+    public float JUMP_FORCE = 2500.0f;
     public float UTILITY_FORCE = 3500.0f;
     public float UTILITY_COOLDOWN = 1.5f;
     public float DOWNWARD_FORCE = -50.0f;
@@ -37,13 +38,6 @@ public class Movement : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-        float frameRateFactor = Time.deltaTime;
-
-    }
-
     private void FixedUpdate()
     {
 
@@ -59,7 +53,7 @@ public class Movement : MonoBehaviour
             xSpeed = 0.0f;
             ySpeed = 0.0f; // come back to this to fix deceleration plz
         }
-        playerRigidBody.AddForce(xSpeed, 0, ySpeed);
+        playerRigidBody.AddRelativeForce(xSpeed, 0, ySpeed);
 
         // pressed actions & gravity application
         if (IsGrounded())
@@ -94,7 +88,7 @@ public class Movement : MonoBehaviour
         utilityDebounce = true;
         Vector2 direction = v2MoveValue;
         Vector3 force = new(UTILITY_FORCE * direction.x, 0, UTILITY_FORCE * direction.y);
-        playerRigidBody.AddForce(force);
+        playerRigidBody.AddRelativeForce(force);
         yield return new WaitForSeconds(UTILITY_COOLDOWN);
         utilityDebounce = false;
 

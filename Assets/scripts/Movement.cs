@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Diagnostics;
 using TMPro;
@@ -7,6 +8,8 @@ using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
+
+    public CooldownController cooldownBarScript;
 
     public float ACCELERATION_FACTOR = 75.0f;
     public float DECELERATION_FACTOR = 50.0f;
@@ -69,7 +72,7 @@ public class Movement : MonoBehaviour
         }
         if (utilityAction.IsPressed() && !utilityDebounce)
         {
-            StartCoroutine(activateUtility(moveValue));
+            StartCoroutine(ActivateUtility(moveValue));
         }
 
     }
@@ -82,14 +85,15 @@ public class Movement : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f);
 
     }
-    IEnumerator activateUtility(Vector2 v2MoveValue)
+    IEnumerator ActivateUtility(Vector2 v2MoveValue)
     {
 
         utilityDebounce = true;
         Vector2 direction = v2MoveValue;
         Vector3 force = new(UTILITY_FORCE * direction.x, 0, UTILITY_FORCE * direction.y);
         playerRigidBody.AddRelativeForce(force);
-        yield return new WaitForSeconds(UTILITY_COOLDOWN);
+        cooldownBarScript.StartCoroutine("InitiateCooldown", UTILITY_COOLDOWN);
+        yield return new WaitForSecondsRealtime(UTILITY_COOLDOWN);
         utilityDebounce = false;
 
     }

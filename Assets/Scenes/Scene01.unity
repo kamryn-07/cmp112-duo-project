@@ -762,7 +762,7 @@ MonoBehaviour:
   jumpForce: 2500
   utilityForce: 3500
   utilityCooldown: 1.5
-  downwardForce: -50
+  downwardForce: -65
   walljumpThreshold: 4.5
   walljumpVerticalDivision: 2.5
   xSpeed: 0

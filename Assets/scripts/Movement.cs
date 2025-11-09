@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour
     public float xSpeed = 0.0f;
     public float ySpeed = 0.0f;
     public bool inAir = false;
+    public bool inWalljumpPosition = false;
 
     private RaycastHit[] hits;
 
@@ -85,6 +86,10 @@ public class Movement : MonoBehaviour
             else if (hits[3].normal != Vector3.zero)
             {
                 OnWallJump(hits[3].normal);
+            }
+            else
+            {
+                inWalljumpPosition = false;
             }
 
         }
@@ -153,7 +158,11 @@ public class Movement : MonoBehaviour
     private void OnWallJump(Vector3 normal)
     {
 
-        sfxController.OnJumpSfx();
+        if (!inWalljumpPosition)
+        {
+            sfxController.OnJumpSfx();
+        }
+        inWalljumpPosition = true;
         playerRigidBody.AddForce(jumpForce * normal.x, jumpForce / walljumpVerticalDivision, jumpForce * normal.z);
 
     }

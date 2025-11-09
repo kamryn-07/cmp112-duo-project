@@ -47,7 +47,7 @@ public class SfxController : MonoBehaviour
 
         audio.pitch = Random.Range(0.65f, 1.0f);
         audio.panStereo = Random.Range(-0.25f, 0.25f);
-        audio.volume = Random.Range(sfxVolume - (sfxVolume / 2.0f), sfxVolume + (sfxVolume / 2.0f));
+        audio.volume = Random.Range(sfxVolume - (sfxVolume / 3.0f), sfxVolume + (sfxVolume / 3.0f));
 
     }
 

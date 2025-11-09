@@ -163,7 +163,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: bfd92aa6c74ae1e46802ac5cdc4c9b43, type: 3}
+  m_Resource: {fileID: 8300000, guid: 34c7ce16bf64922408b5ba3547fc5bfe, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -767,6 +767,8 @@ MonoBehaviour:
   walljumpVerticalDivision: 2.5
   xSpeed: 0
   ySpeed: 0
+  inAir: 0
+  inWalljumpPosition: 0
 --- !u!54 &606503278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2297,7 +2299,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 510d3aec01fcf5b49b37eab492ae0181, type: 3}
+  m_Resource: {fileID: 8300000, guid: bfd92aa6c74ae1e46802ac5cdc4c9b43, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

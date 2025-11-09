@@ -29,24 +29,25 @@ public class SfxController : MonoBehaviour
     public void OnJumpSfx()
     {
 
-        RandomisePitchAndPan(jumpSfx);
+        RandomiseAudioProperties(jumpSfx);
         jumpSfx.Play();
 
     }
     public void OnLandSfx()
     {
 
-        RandomisePitchAndPan(landSfx);
+        RandomiseAudioProperties(landSfx);
         landSfx.Play();
 
     }
 
     // randomise for variety lol
-    private void RandomisePitchAndPan(AudioSource audio)
+    private void RandomiseAudioProperties(AudioSource audio)
     {
 
         audio.pitch = Random.Range(0.65f, 1.0f);
         audio.panStereo = Random.Range(-0.25f, 0.25f);
+        audio.volume = Random.Range(sfxVolume - (sfxVolume / 2.0f), sfxVolume + (sfxVolume / 2.0f));
 
     }
 

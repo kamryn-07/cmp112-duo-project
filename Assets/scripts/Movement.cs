@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
 
     public float xSpeed = 0.0f;
     public float ySpeed = 0.0f;
+    public bool inAir = false;
 
     private RaycastHit[] hits;
 
@@ -90,7 +91,16 @@ public class Movement : MonoBehaviour
 
         if (!IsGrounded())
         {
+            inAir = true;
             playerRigidBody.AddForce(0, downwardForce, 0);
+        }
+        else
+        {
+            if (inAir)
+            {
+                sfxController.OnLandSfx();
+            }
+            inAir = false;
         }
         if (utilityAction.IsPressed() && !utilityDebounce)
         {

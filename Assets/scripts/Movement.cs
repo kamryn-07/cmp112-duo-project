@@ -5,8 +5,10 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
 
-    public CooldownController cooldownBarScript;
     public GameObject player;
+    public CooldownController cooldownBarScript;
+    public SfxController sfxController;
+
     Rigidbody playerRigidBody;
     InputAction moveAction;
     InputAction jumpAction;
@@ -134,12 +136,14 @@ public class Movement : MonoBehaviour
     private void OnJump()
     {
 
+        sfxController.OnJumpSfx();
         playerRigidBody.AddForce(0, jumpForce, 0);
 
     }
     private void OnWallJump(Vector3 normal)
     {
 
+        sfxController.OnJumpSfx();
         playerRigidBody.AddForce(jumpForce * normal.x, jumpForce / walljumpVerticalDivision, jumpForce * normal.z);
 
     }

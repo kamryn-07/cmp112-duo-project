@@ -145,7 +145,6 @@ public class Movement : MonoBehaviour
     private void OnWallJump(Vector3 normal)
     {
 
-        UnityEngine.Debug.Log(normal);
         playerRigidBody.AddForce(JUMP_FORCE * normal.x, JUMP_FORCE / WALLJUMP_VERTICAL_DIVISION, JUMP_FORCE * normal.z);
 
     }

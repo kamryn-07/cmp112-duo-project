@@ -1,34 +1,30 @@
-using System;
 using System.Collections;
-using System.Diagnostics;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
 
     public CooldownController cooldownBarScript;
 
-    public float ACCELERATION_FACTOR = 75.0f;
-    public float DECELERATION_FACTOR = 50.0f;
-    public float SPEED_THRESHOLD = 750.0f;
-    public float JUMP_FORCE = 2500.0f;
-    public float UTILITY_FORCE = 3500.0f;
-    public float UTILITY_COOLDOWN = 1.5f;
-    public float DOWNWARD_FORCE = -50.0f;
-    public float WALLJUMP_THRESHOLD = 50.0f;
-    public float WALLJUMP_VERTICAL_DIVISION = 2.5f;
+    public float accelerationFactor = 75.0f;
+    public float decelerationFactor = 50.0f;
+    public float speedThreshold = 750.0f;
+    public float jumpForce = 2500.0f;
+    public float utilityForce = 3500.0f;
+    public float utilityCooldown = 1.5f;
+    public float downwardForce = -50.0f;
+    public float walljumpThreshold = 50.0f;
+    public float walljumpVerticalDivision = 2.5f;
+
+    public float xSpeed = 0.0f;
+    public float ySpeed = 0.0f;
 
     InputAction moveAction;
     InputAction jumpAction;
     InputAction utilityAction;
     GameObject player;
     Rigidbody playerRigidBody;
-
-    public float xSpeed = 0.0f;
-    public float ySpeed = 0.0f;
 
     private RaycastHit[] hits;
 
@@ -52,8 +48,8 @@ public class Movement : MonoBehaviour
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
         if (moveValue.magnitude > 0)
         {
-            xSpeed = (moveValue.x * ACCELERATION_FACTOR);
-            ySpeed = (moveValue.y * ACCELERATION_FACTOR);
+            xSpeed = (moveValue.x * accelerationFactor);
+            ySpeed = (moveValue.y * accelerationFactor);
         }
         else
         {
@@ -94,7 +90,7 @@ public class Movement : MonoBehaviour
 
         if (!IsGrounded())
         {
-            playerRigidBody.AddForce(0, DOWNWARD_FORCE, 0);
+            playerRigidBody.AddForce(0, downwardForce, 0);
         }
         if (utilityAction.IsPressed() && !utilityDebounce)
         {
@@ -116,10 +112,10 @@ public class Movement : MonoBehaviour
     private RaycastHit[] GetWallHits()
     {
 
-        Physics.Raycast(transform.position, Vector3.left, out var hitL, WALLJUMP_THRESHOLD);
-        Physics.Raycast(transform.position, Vector3.right, out var hitR, WALLJUMP_THRESHOLD);
-        Physics.Raycast(transform.position, Vector3.forward, out var hitF, WALLJUMP_THRESHOLD);
-        Physics.Raycast(transform.position, Vector3.back, out var hitB, WALLJUMP_THRESHOLD);
+        Physics.Raycast(transform.position, Vector3.left, out var hitL, walljumpThreshold);
+        Physics.Raycast(transform.position, Vector3.right, out var hitR, walljumpThreshold);
+        Physics.Raycast(transform.position, Vector3.forward, out var hitF, walljumpThreshold);
+        Physics.Raycast(transform.position, Vector3.back, out var hitB, walljumpThreshold);
 
         return new RaycastHit[4]{ hitL, hitR, hitF, hitB };
 
@@ -130,23 +126,23 @@ public class Movement : MonoBehaviour
 
         utilityDebounce = true;
         Vector2 direction = v2MoveValue;
-        Vector3 force = new(UTILITY_FORCE * direction.x, 0, UTILITY_FORCE * direction.y);
+        Vector3 force = new(utilityForce * direction.x, 0, utilityForce * direction.y);
         playerRigidBody.AddRelativeForce(force);
-        cooldownBarScript.StartCoroutine("InitiateCooldown", UTILITY_COOLDOWN);
-        yield return new WaitForSecondsRealtime(UTILITY_COOLDOWN);
+        cooldownBarScript.StartCoroutine("InitiateCooldown", utilityCooldown);
+        yield return new WaitForSecondsRealtime(utilityCooldown);
         utilityDebounce = false;
 
     }
     private void OnJump()
     {
 
-        playerRigidBody.AddForce(0, JUMP_FORCE, 0);
+        playerRigidBody.AddForce(0, jumpForce, 0);
 
     }
     private void OnWallJump(Vector3 normal)
     {
 
-        playerRigidBody.AddForce(JUMP_FORCE * normal.x, JUMP_FORCE / WALLJUMP_VERTICAL_DIVISION, JUMP_FORCE * normal.z);
+        playerRigidBody.AddForce(jumpForce * normal.x, jumpForce / walljumpVerticalDivision, jumpForce * normal.z);
 
     }
 

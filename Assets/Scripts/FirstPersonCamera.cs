@@ -5,7 +5,6 @@ public class FirstPersonCamera : MonoBehaviour
 {
 
     public Vector3 cameraOffset = new Vector3(0, 5.0f, 0);
-    public float pollingFrequency = 1000.0f;
     public float sensX = 75.0f;
     public float sensY = 75.0f;
     public float smoothSpeed = 12.5f;
@@ -29,9 +28,6 @@ public class FirstPersonCamera : MonoBehaviour
         Cursor.visible = false;
         Look = InputSystem.actions.FindAction("Look");
         transform.rotation = Quaternion.identity;
-        InputSystem.pollingFrequency = pollingFrequency;
-
-        QualitySettings.vSyncCount = 1;
 
     }
 

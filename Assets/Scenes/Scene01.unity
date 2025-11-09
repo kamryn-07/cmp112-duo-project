@@ -423,11 +423,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraOffset: {x: 0, y: 5, z: 0}
-  pollingFrequency: 1000
   sensX: 0.2
   sensY: 0.2
   smoothSpeed: 17.5
   maxInputDelta: 500
+--- !u!1 &465402693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 465402695}
+  - component: {fileID: 465402694}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &465402694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465402693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a9170b1b9440244bcb3c78311fc07e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  qualityVSyncCount: 1
+  pollingFrequency: 1000
+--- !u!4 &465402695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465402693}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &606503272
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,15 +598,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownBarScript: {fileID: 722573760}
-  ACCELERATION_FACTOR: 75
-  DECELERATION_FACTOR: 50
-  SPEED_THRESHOLD: 750
-  JUMP_FORCE: 2500
-  UTILITY_FORCE: 3500
-  UTILITY_COOLDOWN: 1.5
-  DOWNWARD_FORCE: -50
-  WALLJUMP_THRESHOLD: 5
-  WALLJUMP_VERTICAL_DIVISION: 2.5
+  accelerationFactor: 75
+  decelerationFactor: 50
+  speedThreshold: 750
+  jumpForce: 2500
+  utilityForce: 3500
+  utilityCooldown: 1.5
+  downwardForce: -50
+  walljumpThreshold: 50
+  walljumpVerticalDivision: 2.5
   xSpeed: 0
   ySpeed: 0
 --- !u!54 &606503278
@@ -2009,3 +2054,4 @@ SceneRoots:
   - {fileID: 1192038140}
   - {fileID: 919656497}
   - {fileID: 321612995}
+  - {fileID: 465402695}

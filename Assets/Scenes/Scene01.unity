@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a9170b1b9440244bcb3c78311fc07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fpsCap: 30
   qualityVSyncCount: 1
   pollingFrequency: 1000
 --- !u!4 &465402695

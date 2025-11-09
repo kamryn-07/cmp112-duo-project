@@ -11,6 +11,12 @@ public class GameSettings : MonoBehaviour
     void Start()
     {
 
+        UpdateSettings();
+
+    }
+    public void UpdateSettings()
+    {
+
         QualitySettings.vSyncCount = qualityVSyncCount;
         InputSystem.pollingFrequency = pollingFrequency;
 

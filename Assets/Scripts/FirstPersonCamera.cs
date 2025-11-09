@@ -4,11 +4,12 @@ using UnityEngine.InputSystem;
 public class FirstPersonCamera : MonoBehaviour
 {
 
+    public Vector3 cameraOffset = new Vector3(0, 5.0f, 0);
+    public float pollingFrequency = 1000.0f;
     public float sensX = 75.0f;
     public float sensY = 75.0f;
     public float smoothSpeed = 12.5f;
-    public float maxInputDelta = 1000.0f;
-    public bool lookIsPointerDelta = true;
+    public float maxInputDelta = 500.0f;
 
     Vector2 rawLook = Vector2.zero;
     Vector2 look = Vector2.zero;
@@ -28,6 +29,9 @@ public class FirstPersonCamera : MonoBehaviour
         Cursor.visible = false;
         Look = InputSystem.actions.FindAction("Look");
         transform.rotation = Quaternion.identity;
+        InputSystem.pollingFrequency = pollingFrequency;
+
+        QualitySettings.vSyncCount = 1;
 
     }
 
@@ -45,29 +49,33 @@ public class FirstPersonCamera : MonoBehaviour
         float factor = 1f - Mathf.Exp(-smoothSpeed * Time.deltaTime);
         look = Vector2.Lerp(look, rawLook, factor);
 
+        if (Time.deltaTime > 0.002f || Time.deltaTime < 0.001f)
+        {
+            UnityEngine.Debug.Log(Time.deltaTime);
+        }
+
     }
 
     void LateUpdate()
     {
 
         if (player == null) return;
-        float dt = Time.deltaTime;
 
         // attach the camera's position to the player
-        transform.position = player.transform.position;
+        transform.position = player.transform.position + cameraOffset;
+        transform.SetLocalPositionAndRotation(transform.position, transform.rotation);
 
         // rotation calculations
-        float scale = lookIsPointerDelta ? 1.0f : dt;
-        yaw += look.x * sensX * scale;
-        pitch += -look.y * sensY * scale;
+        yaw += look.x * sensX;
+        pitch += -look.y * sensY;
         yaw = Mathf.Repeat(yaw, 360.0f);
-        pitch = Mathf.Clamp(pitch, -89.0f, 89.0f);
+        pitch = Mathf.Clamp(pitch, -85.0f, 85.0f);
 
         // rotation handling
         Quaternion targRotation = Quaternion.Euler(pitch, yaw, 0.0f);
 
         // interpolation
-        float t = 1.0f - Mathf.Exp(-smoothSpeed * dt);
+        float t = 1.0f - Mathf.Exp(-smoothSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Slerp(transform.rotation, targRotation, t);
 
     }

@@ -32,9 +32,9 @@ public class Movement : MonoBehaviour
 
     private RaycastHit[] hits;
 
-    bool utilityDebounce = false;
+    private bool utilityDebounce = false;
 
-    private void Start()
+    void Start()
     {
 
         moveAction = InputSystem.actions.FindAction("Move");
@@ -91,6 +91,7 @@ public class Movement : MonoBehaviour
             }
 
         }
+
         if (!IsGrounded())
         {
             playerRigidBody.AddForce(0, DOWNWARD_FORCE, 0);

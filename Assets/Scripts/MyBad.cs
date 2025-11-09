@@ -3,7 +3,7 @@ using UnityEngine;
 public class MyBad : MonoBehaviour
 {
 
-    public int targFrameRate = 120;
+    public int targFrameRate = 165;
 
     void Start()
     {

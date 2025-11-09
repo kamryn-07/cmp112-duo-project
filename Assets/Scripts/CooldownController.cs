@@ -28,7 +28,7 @@ public class CooldownController : MonoBehaviour
             UnityEngine.Debug.Log(i / iMax);
             cdImage.fillAmount = i / iMax;
             i++;
-            yield return new WaitForSecondsRealtime(cd / (iMax*1.04f));
+            yield return new WaitForSecondsRealtime(cd / (iMax*1.075f));
         }
 
     }

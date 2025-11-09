@@ -6,25 +6,24 @@ public class Movement : MonoBehaviour
 {
 
     public CooldownController cooldownBarScript;
-
-    public float accelerationFactor = 75.0f;
-    public float decelerationFactor = 50.0f;
-    public float speedThreshold = 750.0f;
-    public float jumpForce = 2500.0f;
-    public float utilityForce = 3500.0f;
-    public float utilityCooldown = 1.5f;
-    public float downwardForce = -50.0f;
-    public float walljumpThreshold = 50.0f;
-    public float walljumpVerticalDivision = 2.5f;
-
-    public float xSpeed = 0.0f;
-    public float ySpeed = 0.0f;
-
+    public GameObject player;
+    Rigidbody playerRigidBody;
     InputAction moveAction;
     InputAction jumpAction;
     InputAction utilityAction;
-    GameObject player;
-    Rigidbody playerRigidBody;
+
+    public float accelerationFactor;
+    public float decelerationFactor;
+    public float speedThreshold;
+    public float jumpForce;
+    public float utilityForce;
+    public float utilityCooldown;
+    public float downwardForce;
+    public float walljumpThreshold;
+    public float walljumpVerticalDivision;
+
+    public float xSpeed = 0.0f;
+    public float ySpeed = 0.0f;
 
     private RaycastHit[] hits;
 
@@ -36,7 +35,6 @@ public class Movement : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         utilityAction = InputSystem.actions.FindAction("Utility");
-        player = GameObject.Find("Player");
         playerRigidBody = player.GetComponent<Rigidbody>();
 
     }

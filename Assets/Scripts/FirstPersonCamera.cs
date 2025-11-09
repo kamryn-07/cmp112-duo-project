@@ -4,25 +4,24 @@ using UnityEngine.InputSystem;
 public class FirstPersonCamera : MonoBehaviour
 {
 
-    public Vector3 cameraOffset = new Vector3(0, 5.0f, 0);
-    public float sensX = 75.0f;
-    public float sensY = 75.0f;
-    public float smoothSpeed = 12.5f;
-    public float maxInputDelta = 500.0f;
+    public GameObject player;
+    Rigidbody playerRigidBody;
+    InputAction Look;
+
+    public Vector3 cameraOffset;
+    public float sensX;
+    public float sensY;
+    public float smoothSpeed;
+    public float maxInputDelta;
 
     Vector2 rawLook = Vector2.zero;
     Vector2 look = Vector2.zero;
     float yaw;      // horizontal
     float pitch;    // vertical
 
-    InputAction Look;
-    GameObject player;
-    Rigidbody playerRigidBody;
-
     void Start()
     {
 
-        player = GameObject.Find("Player");
         playerRigidBody = player.GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

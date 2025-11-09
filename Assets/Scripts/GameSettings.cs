@@ -4,9 +4,9 @@ using UnityEngine.InputSystem;
 public class GameSettings : MonoBehaviour
 {
 
-    public int fpsCap = 0;
-    public int qualityVSyncCount = 1;
-    public float pollingFrequency = 1000.0f;
+    public int fpsCap;
+    public int qualityVSyncCount;
+    public float pollingFrequency;
 
     void Start()
     {

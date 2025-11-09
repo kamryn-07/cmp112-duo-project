@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ded1a28304036419d7515764a45319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 606503272}
   cameraOffset: {x: 0, y: 5, z: 0}
   sensX: 0.2
   sensY: 0.2
@@ -599,6 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownBarScript: {fileID: 722573760}
+  player: {fileID: 606503272}
   accelerationFactor: 75
   decelerationFactor: 50
   speedThreshold: 750
@@ -606,7 +608,7 @@ MonoBehaviour:
   utilityForce: 3500
   utilityCooldown: 1.5
   downwardForce: -50
-  walljumpThreshold: 50
+  walljumpThreshold: 4.5
   walljumpVerticalDivision: 2.5
   xSpeed: 0
   ySpeed: 0
@@ -725,6 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f643d19df420c340a718755af490a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldownBar: {fileID: 722573756}
 --- !u!1 &777173043
 GameObject:
   m_ObjectHideFlags: 0

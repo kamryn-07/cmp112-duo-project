@@ -5,13 +5,12 @@ using UnityEngine.UI;
 public class CooldownController : MonoBehaviour
 {
 
-    GameObject cooldownBar;
+    public GameObject cooldownBar;
     Image cdImage;
 
     private void Start()
     {
 
-        cooldownBar = GameObject.Find("CooldownBar");
         cdImage = cooldownBar.GetComponent<Image>();
 
     }

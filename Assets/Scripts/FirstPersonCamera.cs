@@ -30,7 +30,7 @@ public class FirstPersonCamera : MonoBehaviour
 
     }
 
-    private void Update()
+    void Update()
     {
 
         if (Look == null) return;
@@ -43,11 +43,6 @@ public class FirstPersonCamera : MonoBehaviour
         // exponential smoothing of the raw input to reduce spikes
         float factor = 1f - Mathf.Exp(-smoothSpeed * Time.deltaTime);
         look = Vector2.Lerp(look, rawLook, factor);
-
-        if (Time.deltaTime > 0.002f || Time.deltaTime < 0.001f)
-        {
-            UnityEngine.Debug.Log(Time.deltaTime);
-        }
 
     }
 

@@ -15,8 +15,6 @@ public class Movement : MonoBehaviour
     InputAction utilityAction;
 
     public float accelerationFactor;
-    public float decelerationFactor;
-    public float speedThreshold;
     public float jumpForce;
     public float utilityForce;
     public float utilityCooldown;
@@ -43,7 +41,7 @@ public class Movement : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
 
         // player movement handling

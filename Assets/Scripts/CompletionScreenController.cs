@@ -12,13 +12,6 @@ public class CompletionScreenController : MonoBehaviour
     public TimerController timerController;
     public TextMeshProUGUI completionText;
 
-    void Start()
-    {
-
-        StartCoroutine(s());
-
-    }
-
     public void OnLevelComplete()
     {
 
@@ -39,14 +32,6 @@ public class CompletionScreenController : MonoBehaviour
         timerController.StartTimer(playerController.time);
         completionScreenCanvas.enabled = false;
         playerController.UnfreezePlayer();
-
-    }
-
-    private IEnumerator s()
-    {
-
-        yield return new WaitForSeconds(playerController.completionTime);
-        OnLevelComplete();
 
     }
 

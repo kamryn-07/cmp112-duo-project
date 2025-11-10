@@ -143,7 +143,7 @@ public class Movement : MonoBehaviour
         Vector3 force = new(utilityForce * direction.x, 0, utilityForce * direction.y);
         playerRigidBody.AddRelativeForce(force);
         cooldownController.StartCoroutine("InitiateCooldown", utilityCooldown);
-        yield return new WaitForSecondsRealtime(utilityCooldown);
+        yield return new WaitForSeconds(utilityCooldown);
         utilityDebounce = false;
 
     }

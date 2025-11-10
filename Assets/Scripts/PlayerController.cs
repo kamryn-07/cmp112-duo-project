@@ -5,14 +5,18 @@ public class PlayerController : MonoBehaviour
 {
 
     // THE NUMBER
-    const float time = 22.0f;
+    public float time = 22.0f;
     // THE NUMBER
 
+    public FirstPersonCamera firstPersonCameraController;
     public GameObject player;
     public SfxController sfxController;
     public TimerController timerController;
+    public CompletionScreenController completionScreenController;
     public DeathscreenController deathscreenController;
+    public Vector3 resetOffset;
     public float respawnTime;
+    public float completionTime;
     private Rigidbody playerRigidbody;
 
     private void Start()
@@ -25,11 +29,6 @@ public class PlayerController : MonoBehaviour
     public void KillPlayer()
     {
 
-        timerController.tEnabled = false;
-        player.transform.position = Vector3.zero + new Vector3(0, 10, 0);
-        playerRigidbody.isKinematic = true;
-        sfxController.OnDeathSfx();
-        deathscreenController.ShowDeathscreen();
         StartCoroutine(RespawnPlayer());
 
     }
@@ -37,10 +36,49 @@ public class PlayerController : MonoBehaviour
     private IEnumerator RespawnPlayer()
     {
 
+        timerController.tEnabled = false;
+        ResetPlayerPosition();
+        FreezePlayer();
+        sfxController.OnDeathSfx();
+        deathscreenController.ShowDeathscreen();
         yield return new WaitForSeconds(respawnTime);
-        playerRigidbody.isKinematic = false;
+        firstPersonCameraController.ResetCameraOrientation();
+        UnfreezePlayer();
         deathscreenController.HideDeathscreen();
         timerController.StartTimer(time);
+
+    }
+
+    public IEnumerator RepositionPlayer()
+    {
+
+        FreezePlayer();
+        yield return new WaitForSeconds(completionTime);
+        ResetPlayerPosition();
+        UnfreezePlayer();
+
+    }
+
+    public void FreezePlayer()
+    {
+
+        playerRigidbody.isKinematic = true;
+
+    }
+
+    public void UnfreezePlayer()
+    {
+
+        playerRigidbody.isKinematic = false;
+
+    }
+
+    public void ResetPlayerPosition()
+    {
+
+        player.transform.position = Vector3.zero + resetOffset;
+        firstPersonCameraController.pitch = 0.0f;
+        firstPersonCameraController.yaw = 0.0f;
 
     }
 

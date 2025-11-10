@@ -16,8 +16,8 @@ public class FirstPersonCamera : MonoBehaviour
 
     Vector2 rawLook = Vector2.zero;
     Vector2 look = Vector2.zero;
-    float yaw;      // horizontal
-    float pitch;    // vertical
+    public float yaw;      // horizontal
+    public float pitch;    // vertical
 
     void Start()
     {
@@ -76,6 +76,14 @@ public class FirstPersonCamera : MonoBehaviour
         float tFixed = 1.0f - Mathf.Exp(-smoothSpeed * Time.fixedDeltaTime);
         Quaternion targPlrRotation = Quaternion.Euler(0.0f, yaw, 0.0f);
         playerRigidBody.MoveRotation(Quaternion.Slerp(player.transform.rotation, targPlrRotation, tFixed));    // camera's rotation still jumps around in odd ways                                                                                              // please do fix this, it actually looks so fucking bad
+
+    }
+
+    public void ResetCameraOrientation()
+    {
+
+        pitch = 0.0f;
+        yaw = 0.0f;
 
     }
 

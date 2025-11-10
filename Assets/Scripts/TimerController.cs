@@ -16,7 +16,7 @@ public class TimerController : MonoBehaviour
     {
 
         Text = timerText.GetComponent<TextMeshProUGUI>();
-        StartTimer(22.0f);
+        StartTimer(playerController.time);
 
     }
 

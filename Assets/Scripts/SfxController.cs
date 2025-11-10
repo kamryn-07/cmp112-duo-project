@@ -9,6 +9,7 @@ public class SfxController : MonoBehaviour
     public AudioSource landSfx;
     public AudioSource whooshSfx;
     public AudioSource explosionSfx;
+    public AudioSource gongSfx;
     public float sfxVolume;
 
     void Start()
@@ -57,6 +58,13 @@ public class SfxController : MonoBehaviour
 
         RandomiseAudioProperties(explosionSfx);
         explosionSfx.Play();
+
+    }
+
+    public void OnLevelCompleteSfx()
+    {
+
+        gongSfx.Play();
 
     }
 

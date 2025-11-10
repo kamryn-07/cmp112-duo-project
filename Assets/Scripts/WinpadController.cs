@@ -16,7 +16,6 @@ public class WinpadController : MonoBehaviour
 
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
         

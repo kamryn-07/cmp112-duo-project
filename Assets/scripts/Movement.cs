@@ -105,7 +105,7 @@ public class Movement : MonoBehaviour
             }
             inAir = false;
         }
-        if (utilityAction.IsPressed() && !utilityDebounce)
+        if (utilityAction.IsPressed() && !utilityDebounce && moveValue.magnitude != 0)
         {
             StartCoroutine(ActivateUtility(moveValue));
         }

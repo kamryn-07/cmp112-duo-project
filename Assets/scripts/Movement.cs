@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
 
     public GameObject player;
-    public CooldownController cooldownBarScript;
+    public CooldownController cooldownController;
     public SfxController sfxController;
 
     Rigidbody playerRigidBody;
@@ -144,7 +144,7 @@ public class Movement : MonoBehaviour
         Vector2 direction = v2MoveValue;
         Vector3 force = new(utilityForce * direction.x, 0, utilityForce * direction.y);
         playerRigidBody.AddRelativeForce(force);
-        cooldownBarScript.StartCoroutine("InitiateCooldown", utilityCooldown);
+        cooldownController.StartCoroutine("InitiateCooldown", utilityCooldown);
         yield return new WaitForSecondsRealtime(utilityCooldown);
         utilityDebounce = false;
 

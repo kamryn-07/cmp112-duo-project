@@ -907,7 +907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 606503272}
-  cooldownBarScript: {fileID: 722573760}
+  cooldownController: {fileID: 0}
   sfxController: {fileID: 1124122441}
   accelerationFactor: 75
   decelerationFactor: 50
@@ -1367,8 +1367,10 @@ MonoBehaviour:
   sfxArray:
   - {fileID: 2133058459}
   - {fileID: 224009169}
+  - {fileID: 350078689}
   jumpSfx: {fileID: 2133058459}
   landSfx: {fileID: 224009169}
+  whooshSfx: {fileID: 350078689}
   sfxVolume: 0.125
 --- !u!1 &1128770652
 GameObject:

@@ -8,7 +8,7 @@ public class CooldownController : MonoBehaviour
     public GameObject cooldownBar;
     Image cdImage;
 
-    private void Start()
+    void Start()
     {
 
         cdImage = cooldownBar.GetComponent<Image>();

@@ -140,6 +140,7 @@ public class Movement : MonoBehaviour
     {
 
         utilityDebounce = true;
+        sfxController.OnUtilitySfx();
         Vector2 direction = v2MoveValue;
         Vector3 force = new(utilityForce * direction.x, 0, utilityForce * direction.y);
         playerRigidBody.AddRelativeForce(force);

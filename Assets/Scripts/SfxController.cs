@@ -7,6 +7,7 @@ public class SfxController : MonoBehaviour
     public AudioSource[] sfxArray;
     public AudioSource jumpSfx;
     public AudioSource landSfx;
+    public AudioSource whooshSfx;
     public float sfxVolume;
 
     void Start()
@@ -38,6 +39,14 @@ public class SfxController : MonoBehaviour
 
         RandomiseAudioProperties(landSfx);
         landSfx.Play();
+
+    }
+
+    public void OnUtilitySfx()
+    {
+
+        RandomiseAudioProperties(whooshSfx);
+        whooshSfx.Play();
 
     }
 

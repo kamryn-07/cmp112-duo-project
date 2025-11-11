@@ -10,6 +10,7 @@ public class SfxController : MonoBehaviour
     public AudioSource whooshSfx;
     public AudioSource explosionSfx;
     public AudioSource gongSfx;
+    public AudioSource clickSfx;
     public float sfxVolume;
 
     void Start()
@@ -65,6 +66,13 @@ public class SfxController : MonoBehaviour
     {
 
         gongSfx.Play();
+
+    }
+
+    public void OnClickSfx()
+    {
+
+        clickSfx.Play();
 
     }
 

@@ -2,15 +2,38 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public GameObject[] levelList;
+    public int index = 0;
+
+    private void Start()
     {
-        
+
+        LoadLevel();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnLevelComplete()
     {
-        
+
+        index++;
+        DeloadLevel();
+        LoadLevel();
+
     }
+
+    private void LoadLevel()
+    {
+
+        levelList[index].gameObject.SetActive(true);
+
+    }
+
+    private void DeloadLevel()
+    {
+
+        levelList[index - 1].gameObject.SetActive(false);
+
+    }
+
 }

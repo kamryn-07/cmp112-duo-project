@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
         else if (floatDown)
         {
             floatDown = false;
+            timerController.StartTimer(time);
             UnfreezePlayer();
         }
 

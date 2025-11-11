@@ -5,29 +5,29 @@ using UnityEngine.UI;
 public class CooldownController : MonoBehaviour
 {
 
+    private int maxHeight = 75;
     public GameObject cooldownBar;
-    Image cdImage;
+    RectTransform cdRectTransform;
 
     void Start()
     {
 
-        cdImage = cooldownBar.GetComponent<Image>();
+        cdRectTransform = cooldownBar.GetComponent<RectTransform>();
 
     }
 
     // controls the cooldown bar in relation to the utility activated by the player (this method is called by the player's movement script to be exact)
-    IEnumerator InitiateCooldown(float cd)
+    public IEnumerator InitiateCooldown(float cd)
     {
 
-        cdImage.fillAmount = 0f;
-        int i = 1;
+        float i = 1f;
         float iMax = 60f;
+        cdRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0.0f);
         while (i < iMax+1)
         {
-            UnityEngine.Debug.Log(i / iMax);
-            cdImage.fillAmount = i / iMax;
+            cdRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (maxHeight/iMax)*i);
             i++;
-            yield return new WaitForSecondsRealtime(cd / (iMax*1.075f));
+            yield return new WaitForSecondsRealtime(cd / (iMax*1.15f));
         }
 
     }

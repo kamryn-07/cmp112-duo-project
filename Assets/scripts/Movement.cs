@@ -15,8 +15,6 @@ public class Movement : MonoBehaviour
     InputAction utilityAction;
 
     public float accelerationFactor;
-    public float decelerationFactor;
-    public float speedThreshold;
     public float jumpForce;
     public float utilityForce;
     public float utilityCooldown;
@@ -43,7 +41,7 @@ public class Movement : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
 
         // player movement handling
@@ -107,7 +105,7 @@ public class Movement : MonoBehaviour
             }
             inAir = false;
         }
-        if (utilityAction.IsPressed() && !utilityDebounce)
+        if (utilityAction.IsPressed() && !utilityDebounce && moveValue.magnitude != 0)
         {
             StartCoroutine(ActivateUtility(moveValue));
         }
@@ -145,7 +143,7 @@ public class Movement : MonoBehaviour
         Vector3 force = new(utilityForce * direction.x, 0, utilityForce * direction.y);
         playerRigidBody.AddRelativeForce(force);
         cooldownController.StartCoroutine("InitiateCooldown", utilityCooldown);
-        yield return new WaitForSecondsRealtime(utilityCooldown);
+        yield return new WaitForSeconds(utilityCooldown);
         utilityDebounce = false;
 
     }

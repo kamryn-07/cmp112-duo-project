@@ -4,10 +4,15 @@ using UnityEngine;
 public class SfxController : MonoBehaviour
 {
 
+    public MusicController musicController;
     public AudioSource[] sfxArray;
     public AudioSource jumpSfx;
     public AudioSource landSfx;
     public AudioSource whooshSfx;
+    public AudioSource explosionSfx;
+    public AudioSource gongSfx;
+    public AudioSource clickSfx;
+    public AudioSource toneSfx;
     public float sfxVolume;
 
     void Start()
@@ -47,6 +52,38 @@ public class SfxController : MonoBehaviour
 
         RandomiseAudioProperties(whooshSfx);
         whooshSfx.Play();
+
+    }
+
+
+    public void OnDeathSfx()
+    {
+
+        RandomiseAudioProperties(explosionSfx);
+        explosionSfx.Play();
+
+    }
+
+    public void OnLevelCompleteSfx()
+    {
+
+        gongSfx.Play();
+
+    }
+
+    public void OnClickSfx()
+    {
+
+        clickSfx.Play();
+
+    }
+
+    public void OnGameCompletionSfx()
+    {
+
+        musicController.StopMusic();
+        toneSfx.Play();
+        gongSfx.Stop();
 
     }
 

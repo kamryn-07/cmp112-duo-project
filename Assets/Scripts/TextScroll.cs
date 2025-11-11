@@ -6,9 +6,10 @@ public class TextScroll : MonoBehaviour
 
     public TextMeshProUGUI textMesh;
     public float loopSpeed;
-    private float startX = 650.0f;
-    private float startY = 10.0f;
-    private float loopY = 100.0f;
+    public float startX;
+    public float startY;
+    public float loopY;
+    public float loopX;
 
     void Start()
     {
@@ -20,10 +21,21 @@ public class TextScroll : MonoBehaviour
     void Update()
     {
 
-        textMesh.rectTransform.localPosition += new Vector3(0, loopSpeed * Time.deltaTime, 0);
-        if (textMesh.rectTransform.localPosition.y >= loopY)
+        if (loopY > 0)
         {
-            textMesh.rectTransform.localPosition = new Vector3(startX, startY, 0);
+            textMesh.rectTransform.localPosition += new Vector3(0, loopSpeed * Time.deltaTime, 0);
+            if (textMesh.rectTransform.localPosition.y >= loopY)
+            {
+                textMesh.rectTransform.localPosition = new Vector3(startX, startY, 0);
+            }
+        }
+        else
+        {
+            textMesh.rectTransform.localPosition += new Vector3(loopSpeed * Time.deltaTime, 0, 0);
+            if (textMesh.rectTransform.localPosition.x >= loopX)
+            {
+                textMesh.rectTransform.localPosition = new Vector3(startX, startY, 0);
+            }
         }
 
     }

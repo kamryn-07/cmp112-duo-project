@@ -4,6 +4,7 @@ using UnityEngine;
 public class SfxController : MonoBehaviour
 {
 
+    public MusicController musicController;
     public AudioSource[] sfxArray;
     public AudioSource jumpSfx;
     public AudioSource landSfx;
@@ -11,6 +12,7 @@ public class SfxController : MonoBehaviour
     public AudioSource explosionSfx;
     public AudioSource gongSfx;
     public AudioSource clickSfx;
+    public AudioSource toneSfx;
     public float sfxVolume;
 
     void Start()
@@ -73,6 +75,15 @@ public class SfxController : MonoBehaviour
     {
 
         clickSfx.Play();
+
+    }
+
+    public void OnGameCompletionSfx()
+    {
+
+        musicController.StopMusic();
+        toneSfx.Play();
+        gongSfx.Stop();
 
     }
 

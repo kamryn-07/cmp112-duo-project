@@ -2500,7 +2500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99647ba2bb3a2641bcb2f2242ab80ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEndTime: 1.5
+  gameEndTime: 2.5
   sfxController: {fileID: 1124122441}
   blackscreenController: {fileID: 931809011}
   levelList:

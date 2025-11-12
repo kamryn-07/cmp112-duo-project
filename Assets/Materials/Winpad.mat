@@ -122,16 +122,22 @@ Material:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
     - _EmissionColor: {r: 9.626818, g: 0, b: 25, a: 25}
 =======
     - _EmissionColor: {r: 0, g: 17.630291, b: 25, a: 25}
 >>>>>>> 3e1754f4d583e405feb6400cf27c00d8def9eca4
+<<<<<<< HEAD
 =======
     - _EmissionColor: {r: 0, g: 25, b: 1.0812759, a: 25}
 >>>>>>> parent of 3e1754f (a)
 =======
     - _EmissionColor: {r: 0, g: 25, b: 1.0812759, a: 25}
 >>>>>>> parent of 3e1754f (a)
+=======
+>>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

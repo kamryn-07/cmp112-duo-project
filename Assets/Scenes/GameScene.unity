@@ -1362,10 +1362,13 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> parent of 3e1754f (a)
+=======
+>>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
 --- !u!1 &549352371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,6 +1425,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> 3e1754f4d583e405feb6400cf27c00d8def9eca4
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 3e1754f (a)
@@ -1433,6 +1437,8 @@ Transform:
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> parent of 3e1754f (a)
+=======
+>>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
 --- !u!1 &559255480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,10 +1733,13 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> parent of 3e1754f (a)
+=======
+>>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
 --- !u!1 &594200126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1787,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> 3e1754f4d583e405feb6400cf27c00d8def9eca4
+<<<<<<< HEAD
 =======
   - {fileID: 309633770}
   m_Father: {fileID: 1434144262}
@@ -1788,6 +1798,8 @@ Transform:
   m_Father: {fileID: 1434144262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> parent of 3e1754f (a)
+=======
+>>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
 --- !u!1 &606503272
 GameObject:
   m_ObjectHideFlags: 0
@@ -5033,10 +5045,13 @@ Canvas:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> parent of 3e1754f (a)
+=======
+>>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
 --- !u!1 &1781177545
 GameObject:
   m_ObjectHideFlags: 0
@@ -5156,12 +5171,17 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3e1754f4d583e405feb6400cf27c00d8def9eca4
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> parent of 3e1754f (a)
+=======
+=======
+>>>>>>> 3e1754f4d583e405feb6400cf27c00d8def9eca4
+>>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
 --- !u!1 &1816187797
 GameObject:
   m_ObjectHideFlags: 0

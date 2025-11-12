@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
             timerController.StartTimer(time);
             UnfreezePlayer();
         }
-        if (playerRigidbody.position.y < killY)
+        if (playerRigidbody.position.y < killY) // hey
         {
             KillPlayer();
         }

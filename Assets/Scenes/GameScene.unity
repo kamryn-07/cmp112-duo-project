@@ -1363,12 +1363,15 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
+=======
+>>>>>>> parent of 3e1754f (a)
 --- !u!1 &549352371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1398,11 @@ Transform:
   serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> parent of 3e1754f (a)
 =======
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 >>>>>>> parent of 3e1754f (a)
@@ -1406,6 +1413,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   - {fileID: 1030884323}
@@ -1429,16 +1437,21 @@ Transform:
 =======
 =======
 >>>>>>> parent of 3e1754f (a)
+=======
+>>>>>>> parent of 3e1754f (a)
   - {fileID: 310746947}
   - {fileID: 1236746038}
   m_Father: {fileID: 1434144262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
+=======
+>>>>>>> parent of 3e1754f (a)
 --- !u!1 &559255480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,12 +1747,15 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
+=======
+>>>>>>> parent of 3e1754f (a)
 --- !u!1 &594200126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,7 +1773,11 @@ GameObject:
   m_StaticEditorFlags: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IsActive: 1
+=======
+  m_IsActive: 0
+>>>>>>> parent of 3e1754f (a)
 =======
   m_IsActive: 0
 >>>>>>> parent of 3e1754f (a)
@@ -1780,6 +1800,7 @@ Transform:
   - {fileID: 1781177549}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 378330686}
   - {fileID: 1402738879}
   - {fileID: 1516378350}
@@ -1800,6 +1821,11 @@ Transform:
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
+=======
+  - {fileID: 309633770}
+  m_Father: {fileID: 1434144262}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 3e1754f (a)
 --- !u!1 &606503272
 GameObject:
   m_ObjectHideFlags: 0
@@ -5046,12 +5072,15 @@ Canvas:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> parent of 3e1754f (a)
 =======
 >>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
+=======
+>>>>>>> parent of 3e1754f (a)
 --- !u!1 &1781177545
 GameObject:
   m_ObjectHideFlags: 0
@@ -5158,7 +5187,11 @@ Transform:
   m_LocalPosition: {x: 139.09276, y: 0, z: -11.27385}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalScale: {x: 1000, y: 1000, z: 1000}
+=======
+  m_LocalScale: {x: 10, y: 1, z: 10}
+>>>>>>> parent of 3e1754f (a)
 =======
   m_LocalScale: {x: 10, y: 1, z: 10}
 >>>>>>> parent of 3e1754f (a)
@@ -5172,6 +5205,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3e1754f4d583e405feb6400cf27c00d8def9eca4
 =======
@@ -5182,6 +5216,8 @@ Transform:
 =======
 >>>>>>> 3e1754f4d583e405feb6400cf27c00d8def9eca4
 >>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
+=======
+>>>>>>> parent of 3e1754f (a)
 --- !u!1 &1816187797
 GameObject:
   m_ObjectHideFlags: 0

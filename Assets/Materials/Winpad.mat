@@ -125,6 +125,7 @@ Material:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 569663162eacf943d7b9b3dced665aa344e7bf1a
     - _EmissionColor: {r: 9.626818, g: 0, b: 25, a: 25}
@@ -143,6 +144,9 @@ Material:
 =======
     - _EmissionColor: {r: 0, g: 25, b: 1.0812759, a: 25}
 >>>>>>> parent of 3e1754f (a)
+=======
+    - _EmissionColor: {r: 0, g: 25, b: 13.824415, a: 25}
+>>>>>>> parent of d4f9af7 (Update Winpad.mat)
 =======
     - _EmissionColor: {r: 0, g: 25, b: 13.824415, a: 25}
 >>>>>>> parent of d4f9af7 (Update Winpad.mat)

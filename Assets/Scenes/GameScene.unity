@@ -1188,6 +1188,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &549352371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,6 +1233,8 @@ Transform:
   - {fileID: 1596839067}
   m_Father: {fileID: 1434144262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 3e1754f4d583e405feb6400cf27c00d8def9eca4
 --- !u!1 &559255480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +1526,7 @@ MonoBehaviour:
   timerText: {fileID: 576009561}
   timer: 0
   tEnabled: 0
+<<<<<<< HEAD
 --- !u!1 &594200126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1562,8 @@ Transform:
   - {fileID: 1516378350}
   m_Father: {fileID: 1434144262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 3e1754f4d583e405feb6400cf27c00d8def9eca4
 --- !u!1 &606503272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3122,12 +3128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99647ba2bb3a2641bcb2f2242ab80ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEndTime: 1.5
+  gameEndTime: 2.5
   sfxController: {fileID: 1124122441}
   blackscreenController: {fileID: 931809011}
   levelList:
-  - {fileID: 594200126}
-  - {fileID: 549352371}
+  - {fileID: 0}
+  - {fileID: 0}
   index: 0
 --- !u!4 &1011578972
 Transform:
@@ -3826,8 +3832,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 594200127}
-  - {fileID: 549352372}
   - {fileID: 1011578972}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4738,6 +4742,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+<<<<<<< HEAD
 --- !u!1 &1781177545
 GameObject:
   m_ObjectHideFlags: 0
@@ -4847,6 +4852,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 594200127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 3e1754f4d583e405feb6400cf27c00d8def9eca4
 --- !u!1 &1816187797
 GameObject:
   m_ObjectHideFlags: 0

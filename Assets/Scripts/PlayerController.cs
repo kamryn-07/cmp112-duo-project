@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRigidbody;
     private bool floatDown = true;
     private float cumulativeTime;
+    private float killY = -65.0f;
 
     private void Start()
     {
@@ -45,6 +46,10 @@ public class PlayerController : MonoBehaviour
             floatDown = false;
             timerController.StartTimer(time);
             UnfreezePlayer();
+        }
+        if (playerRigidbody.position.y < killY)
+        {
+            KillPlayer();
         }
 
     }
